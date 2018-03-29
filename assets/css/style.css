@@ -1,0 +1,323 @@
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+body, html {
+  height: 100%;
+  margin: 0;
+  color: #333;
+  background-color: #f4f4f4;
+  font-size: 18px;
+  font-family: 'Raleway', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+.wrapper {
+  padding: 1em;
+}
+
+.card {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+.fade-in {
+    opacity:0;
+    animation:fadeIn ease-in 1;
+    animation-fill-mode:forwards;
+    animation-duration:1s;
+    /* animation-delay: 1.5s; */
+}
+
+/*----- Navbar -----*/
+
+.navbar {
+  background-color: #84B1ED;
+  overflow: hidden;
+  height: 60px;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  transition: 0.3s
+}
+
+.navbar ul {
+  margin: 6px 0 0 0;
+}
+
+.navbar a:hover {
+  background-color: #67D5B5;
+  color: #333;
+}
+
+/*----- Side Menu -----*/
+.side-nav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  opacity: 0.9;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.3s;
+}
+
+.side-nav a {
+  padding: 10px 10px 10px 30px;
+  text-decoration: none;
+  font-size: 22px;
+  color: #ccc;
+  display: block;
+  transition: 0.3s;
+}
+
+/* Effects the direct anchor tags */
+.side-nav > a:hover {
+  color: #67D5B5;
+  background-color: #000;
+  font-weight: bold;
+}
+
+/* Added span to have different styles for close button */
+.side-nav .btn-close-sidemenu a {
+  position: absolute;
+  top: 0;
+  right: 22px;
+  font-weight: bold;
+  font-size: 40px;
+  margin-left: 50px;
+}
+
+.side-nav .btn-close-sidemenu a:hover {
+  color: #FFF;
+}
+
+/*------ Jumbotron ------*/
+.jumbotron {
+  background:
+  linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(255, 255, 255, 0.7)
+  ), url("/assets/images/photographer.jpg") fixed;
+  height: 85vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#main-banner {
+  text-align: center;
+  color: #FFFFF2;
+}
+
+#main-banner h1 {
+  font-size: 6rem;
+  padding-top: 20%;
+  margin: 0;
+}
+
+#main-banner h4 {
+  color: #E0E3DA;
+  font-size: 3rem;
+  margin: 0;
+}
+
+/*------ Sections ------*/
+#gallery,
+#services,
+#about,
+#contact {
+  margin-top: 50px;
+  line-height: 1.5;
+}
+
+#gallery h1,
+#services h1,
+#about h1,
+#contact h1 {
+  text-align: center;
+}
+
+#gallery h1 span,
+#services h1 span,
+#about h1 span,
+#contact h1 span {
+  margin: 0 16px;
+}
+
+.fa {
+  color: #FFF;
+  background-color: #333;
+  padding: 12px;
+  border-radius: 50%;
+}
+
+/*------ Gallery ------*/
+#gallery .grid-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 1em;
+}
+
+.gallery-card {
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+}
+
+.gallery-card img {
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: #333;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  opacity: 0.8;
+  transition: .5s ease;
+}
+
+.gallery-card:hover .overlay {
+  bottom: 0;
+  height: 100%;
+}
+
+.text {
+  color: #FFF;
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+
+
+/*------ Services ------*/
+#services {
+  color: #FFF;
+  padding: 20px 0;
+  background:
+  linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7)
+  ), url("/assets/images/services_banner.jpg") fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#services ul li {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+#services .fa {
+  color: #333;
+  background-color: #FFF;
+}
+
+/*------ About ------*/
+#about {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+/*------ Contact ------*/
+#contact {
+  color: #FFF;
+  background: #3E3E3E;
+}
+
+#contact .fa {
+  color: #333;
+  background-color: #FFF;
+}
+
+#contact-form {
+  /* background-color: #EEE; */
+  margin: auto;
+  width: 60%;
+  padding: 20px;
+}
+
+.input-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.input-group input,
+.input-group textarea {
+  border-radius: 3px;
+  border: none;
+  width: 100%;
+  margin-top: 5px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+
+.btn {
+  padding: 10px;
+  border: 2px solid #CCC;
+  color: #333;
+  border-radius: 3px;
+}
+
+/*------ Footer ------*/
+#footer {
+  color: #CCC;
+  background-color: #333;
+  text-align: center;
+  min-height: 80px;
+  padding-top: 40px;
+}
+
+#footer p {
+  margin: 0;
+}
+
+
+/*------ Media Queries ------*/
+@media (max-width: 560px) {
+  #gallery .grid-container{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 720px) {
+  .navbar-nav { display: none; }
+
+  #gallery .grid-container{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .navbar-nav { display: none; }
+}
+
+@media (min-width: 720px) {
+  .open-sidenav { display: none; }
+}
